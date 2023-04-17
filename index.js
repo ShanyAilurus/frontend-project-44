@@ -1,3 +1,3 @@
-import { askYourName } from "./src/cli.js";
+import askYourName from './src/cli.js';
 
-export { askYourName };
+export default askYourName;
