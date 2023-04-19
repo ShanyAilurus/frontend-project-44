@@ -1,12 +1,11 @@
 import readlineSync from 'readline-sync';
 import {
-  randomOperator,
   generateRandomNumber,
-  trueAnswerWithCalc,
   askYourName,
+  trueAnswerWithGCD,
 } from '../index.js';
 
-const brainCalc = () => {
+const brainGCD = () => {
   const yourName = askYourName();
   console.log('What is the result of the expression?');
 
@@ -15,12 +14,13 @@ const brainCalc = () => {
   while (counter < 3) {
     const a = generateRandomNumber();
     const b = generateRandomNumber();
-    const operator = randomOperator();
-    const trueAnswer = trueAnswerWithCalc(operator, a, b);
+
     console.log(`Question: ${a} ${b}`);
     const answer = readlineSync.question('Your answer:');
 
-    if (Number(answer) === Number(trueAnswer)) {
+    const trueAnswer = trueAnswerWithGCD(a, b);
+
+    if (Number(answer) === trueAnswer) {
       console.log('Correct!');
       counter += 1;
     } else {
@@ -32,4 +32,4 @@ const brainCalc = () => {
   return console.log(`Congratulations, ${yourName}!`);
 };
 
-export default brainCalc;
+export default brainGCD;

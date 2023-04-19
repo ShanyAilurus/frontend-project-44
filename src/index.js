@@ -32,3 +32,14 @@ export const trueAnswerWithCalc = (operator, a, b) => {
   }
   return `${result}`;
 };
+
+export const trueAnswerWithGCD = (a, b) => {
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+  return a + b;
+};

@@ -3,9 +3,7 @@ import readlineSync from 'readline-sync';
 const askYourName = () => {
   console.log('Welcome to the Brain Games!');
   const yourName = readlineSync.question('May I have your name?: ');
-
   console.log(`Hello, ${yourName}!`);
-
   const isEven = () => {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     let counter = 0;
