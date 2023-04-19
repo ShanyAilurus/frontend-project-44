@@ -8,6 +8,16 @@ export const askYourName = () => {
   return yourName;
 };
 
+export const trueAnswerIsEven = (a) => {
+  let trueAnswer;
+  if (a % 2 === 0) {
+    trueAnswer = 'yes';
+  } else {
+    trueAnswer = 'no';
+  }
+  return trueAnswer;
+};
+
 export const randomOperator = () => {
   const operators = ['+', '-', '*'];
   const randomOperators = Math.floor(Math.random() * operators.length);

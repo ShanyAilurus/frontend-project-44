@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import askYourName from '../src/games/iseven.js';
+import isEven from '../src/games/iseven.js';
 
-askYourName();
+isEven();
