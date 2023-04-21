@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { generateRandomNumber, trueAnswerIsEven, askYourName } from '../index.js';
+import {
+  generateRandomNumber, trueAnswerIsEven, askYourName, wrongAnswer,
+} from '../index.js';
 
 const isEven = () => {
   const yourName = askYourName();
@@ -16,10 +18,11 @@ const isEven = () => {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'\nLet's try again, ${yourName}!`);
+      wrongAnswer(answer, trueAnswer, yourName);
+      return;
     }
   }
-  return console.log(`Congratulations, ${yourName}!`);
+  console.log(`Congratulations, ${yourName}!`);
 };
 
 export default isEven;

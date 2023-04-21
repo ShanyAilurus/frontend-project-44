@@ -84,3 +84,7 @@ export const generateProgression = () => {
   const arr = randomArray(number);
   return arr;
 };
+
+export const wrongAnswer = (answer, trueAnswer, yourName) => {
+  console.log(`"${answer}" is a wrong answer ;(. The correct answer was "${trueAnswer}".\nLet's try again, ${yourName}!`);
+};

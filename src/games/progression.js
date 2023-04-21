@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { askYourName, generateProgression } from '../index.js';
+import { askYourName, generateProgression, wrongAnswer } from '../index.js';
 
 const progression = () => {
   const yourName = askYourName();
@@ -15,7 +15,7 @@ const progression = () => {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${hiddenElement}'\nLet's try again, ${yourName}!`);
+      wrongAnswer(answer, hiddenElement, yourName);
     }
   }
   return console.log(`Congratulations, ${yourName}!`);

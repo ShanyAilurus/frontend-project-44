@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { askYourName, randomInTheRange, trueAnswerWithPrime } from '../index.js';
+import {
+  askYourName, randomInTheRange, trueAnswerWithPrime, wrongAnswer,
+} from '../index.js';
 
 const isPrime = () => {
   const yourName = askYourName();
@@ -14,10 +16,11 @@ const isPrime = () => {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'\nLet's try again, ${yourName}!`);
+      wrongAnswer(answer, trueAnswer, yourName);
+      return;
     }
   }
-  return console.log(`Congratulations, ${yourName}!`);
+  console.log(`Congratulations, ${yourName}!`);
 };
 
 export default isPrime;

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import {
-  randomOperator, generateRandomNumber, trueAnswerWithCalc, askYourName,
+  randomOperator, generateRandomNumber, trueAnswerWithCalc, askYourName, wrongAnswer,
 } from '../index.js';
 
 const brainCalc = () => {
@@ -14,14 +14,15 @@ const brainCalc = () => {
     const trueAnswerCalc = trueAnswerWithCalc(operator, a, b);
     console.log(`Question: ${a} ${operator} ${b}`);
     const answer = readlineSync.question('Your answer:');
-    if (Number(answer) === trueAnswerCalc) {
+    if (Number(answer) === Number(trueAnswerCalc)) {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswerCalc}'\nLet's try again, ${yourName}!`);
+      wrongAnswer(answer, trueAnswerCalc, yourName);
+      return;
     }
   }
-  return console.log(`Congratulations, ${yourName}!`);
+  console.log(`Congratulations, ${yourName}!`);
 };
 
 export default brainCalc;
