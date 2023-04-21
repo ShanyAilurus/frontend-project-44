@@ -5,7 +5,7 @@ import {
 
 const brainGCD = () => {
   const yourName = askYourName();
-  console.log('What is the result of the expression?');
+  console.log('Find the greatest common divisor of given numbers.');
   let counter = 0;
   while (counter < 3) {
     const a = generateRandomNumber();
