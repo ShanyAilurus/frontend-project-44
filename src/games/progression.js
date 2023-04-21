@@ -15,9 +15,7 @@ const progression = () => {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${hiddenElement}'\nLet's try again, ${yourName}!`
-      );
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${hiddenElement}'\nLet's try again, ${yourName}!`);
     }
   }
   return console.log(`Congratulations, ${yourName}!`);

@@ -10,12 +10,7 @@ export const askYourName = () => {
 
 export const generateRandomNumber = () => Math.round(Math.random() * 100);
 
-export const randomNumberInTheRange = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  const a = Math.floor(Math.random() * (max - min + 1)) + min;
-  return a;
-};
+export const randomInTheRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const trueAnswerIsEven = (a) => {
   let trueAnswer;
@@ -62,7 +57,7 @@ export const trueAnswerWithGCD = (a, b) => {
 };
 
 export const trueAnswerWithPrime = (a) => {
-  for (let i = 2; i < a; i++) {
+  for (let i = 2; i < a; i += 1) {
     if (a % i === 0) return 'no';
   }
   return 'yes';
@@ -70,15 +65,15 @@ export const trueAnswerWithPrime = (a) => {
 
 export const generateProgression = () => {
   // количество элементов в массиве
-  const number = randomNumberInTheRange(5, 10);
+  const number = randomInTheRange(5, 10);
   // генерируем массив длинной в number
   const randomArray = (number) => {
     // генерируем и кладём в массив первый символ
-    const firstElement = randomNumberInTheRange(1, 100);
+    const firstElement = randomInTheRange(1, 100);
     const arr = [firstElement];
     // генерируем шаг прогрессиии
-    const progressionStep = randomNumberInTheRange(1, 10);
-    for (let i = 0; i < number - 1; i++) {
+    const progressionStep = randomInTheRange(1, 10);
+    for (let i = 0; i < number - 1; i += 1) {
       let num1 = arr[i];
       num1 += progressionStep;
       // заполняем отстаток массива

@@ -1,15 +1,10 @@
 import readlineSync from 'readline-sync';
-import {
-  generateRandomNumber,
-  trueAnswerIsEven,
-  askYourName,
-} from '../index.js';
+import { generateRandomNumber, trueAnswerIsEven, askYourName } from '../index.js';
 
 const isEven = () => {
   const yourName = askYourName();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   let counter = 0;
-
   while (counter < 3) {
     const a = generateRandomNumber();
     const trueAnswer = trueAnswerIsEven(a);
@@ -21,9 +16,7 @@ const isEven = () => {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'\nLet's try again, ${yourName}!`
-      );
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'\nLet's try again, ${yourName}!`);
     }
   }
   return console.log(`Congratulations, ${yourName}!`);
