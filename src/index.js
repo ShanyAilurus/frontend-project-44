@@ -61,6 +61,13 @@ export const trueAnswerWithGCD = (a, b) => {
   return a + b;
 };
 
+export const trueAnswerWithPrime = (a) => {
+  for (let i = 2; i < a; i++) {
+    if (a % i === 0) return 'no';
+  }
+  return 'yes';
+};
+
 export const generateProgression = () => {
   // количество элементов в массиве
   const number = randomNumberInTheRange(5, 10);
