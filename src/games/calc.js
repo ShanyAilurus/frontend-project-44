@@ -14,7 +14,7 @@ const brainCalc = () => {
     const trueAnswer = trueAnswerWithCalc(operator, a, b);
     console.log(`Question: ${a} ${operator} ${b}`);
     const answer = readlineSync.question('Your answer:');
-    if (Number(answer) === Number(trueAnswer)) {
+    if (Number(answer) === trueAnswer) {
       console.log('Correct!');
       counter += 1;
     } else {
