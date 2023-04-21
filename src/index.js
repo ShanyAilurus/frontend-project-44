@@ -8,6 +8,15 @@ export const askYourName = () => {
   return yourName;
 };
 
+export const generateRandomNumber = () => Math.round(Math.random() * 100);
+
+export const randomNumberInTheRange = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  const a = Math.floor(Math.random() * (max - min + 1)) + min;
+  return a;
+};
+
 export const trueAnswerIsEven = (a) => {
   let trueAnswer;
   if (a % 2 === 0) {
@@ -24,8 +33,6 @@ export const randomOperator = () => {
   const operator = operators[randomOperators];
   return operator;
 };
-
-export const generateRandomNumber = () => Math.round(Math.random() * 100);
 
 export const trueAnswerWithCalc = (operator, a, b) => {
   let result;
@@ -52,4 +59,26 @@ export const trueAnswerWithGCD = (a, b) => {
     }
   }
   return a + b;
+};
+
+export const generateProgression = () => {
+  // количество элементов в массиве
+  const number = randomNumberInTheRange(5, 10);
+  // генерируем массив длинной в number
+  const randomArray = (number) => {
+    // генерируем и кладём в массив первый символ
+    const firstElement = randomNumberInTheRange(1, 100);
+    const arr = [firstElement];
+    // генерируем шаг прогрессиии
+    const progressionStep = randomNumberInTheRange(1, 10);
+    for (let i = 0; i < number - 1; i++) {
+      let num1 = arr[i];
+      num1 += progressionStep;
+      // заполняем отстаток массива
+      arr.push(num1);
+    }
+    return arr;
+  };
+  const arr = randomArray(number);
+  return arr;
 };
