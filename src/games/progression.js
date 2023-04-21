@@ -9,7 +9,8 @@ const progression = () => {
     const newArr = generateProgression();
     const rand = Math.floor(Math.random() * newArr.length);
     const hiddenElement = newArr.splice(rand - 1, 1, '..');
-    console.log(`Question: ${newArr}`);
+    const newString = newArr.join(' ');
+    console.log(`Question: ${newString}`);
     const answer = readlineSync.question('Your answer:');
     if (Number(answer) === Number(hiddenElement)) {
       console.log('Correct!');
