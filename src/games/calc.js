@@ -11,14 +11,14 @@ const brainCalc = () => {
     const a = generateRandomNumber();
     const b = generateRandomNumber();
     const operator = randomOperator();
-    const trueAnswer = trueAnswerWithCalc(operator, a, b);
+    const trueAnswerCalc = trueAnswerWithCalc(operator, a, b);
     console.log(`Question: ${a} ${operator} ${b}`);
     const answer = readlineSync.question('Your answer:');
-    if (Number(answer) === trueAnswer) {
+    if (Number(answer) === trueAnswerCalc) {
       console.log('Correct!');
       counter += 1;
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'\nLet's try again, ${yourName}!`);
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswerCalc}'\nLet's try again, ${yourName}!`);
     }
   }
   return console.log(`Congratulations, ${yourName}!`);
