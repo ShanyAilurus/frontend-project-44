@@ -82,7 +82,7 @@ $ brain-progression
 
 #### Пример игры
 
-<a href="https://asciinema.org/a/579137" target="_blank"><img src="https://asciinema.org/a/579137.svg" /></a>
+<a href="https://asciinema.org/a/579340" target="_blank"><img src="https://asciinema.org/a/579340.svg" /></a>
 
 ## Игра: "Простое ли число?"
 

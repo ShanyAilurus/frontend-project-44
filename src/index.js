@@ -45,7 +45,9 @@ export const trueAnswerWithCalc = (operator, a, b) => {
   return `${result}`;
 };
 
-export const trueAnswerWithGCD = (a, b) => {
+export const trueAnswerWithGCD = (num1, num2) => {
+  let a = num1;
+  let b = num2;
   while (a !== 0 && b !== 0) {
     if (a > b) {
       a %= b;
@@ -64,25 +66,20 @@ export const trueAnswerWithPrime = (a) => {
 };
 
 export const generateProgression = () => {
+  // генерируем и кладём в массив первый символ
+  const firstElement = randomInTheRange(1, 100);
+  const array = [firstElement];
   // количество элементов в массиве
   const number = randomInTheRange(5, 10);
-  // генерируем массив длинной в number
-  const randomArray = (number) => {
-    // генерируем и кладём в массив первый символ
-    const firstElement = randomInTheRange(1, 100);
-    const arr = [firstElement];
-    // генерируем шаг прогрессиии
-    const progressionStep = randomInTheRange(1, 10);
-    for (let i = 0; i < number - 1; i += 1) {
-      let num1 = arr[i];
-      num1 += progressionStep;
-      // заполняем отстаток массива
-      arr.push(num1);
-    }
-    return arr;
-  };
-  const arr = randomArray(number);
-  return arr;
+  // генерируем шаг прогрессиии
+  const progressionStep = randomInTheRange(1, 10);
+  for (let i = 0; i < number - 1; i += 1) {
+    let num1 = array[i];
+    num1 += progressionStep;
+    // заполняем отстаток массива
+    array.push(num1);
+  }
+  return array;
 };
 
 export const wrongAnswer = (answer, trueAnswer, yourName) => {
