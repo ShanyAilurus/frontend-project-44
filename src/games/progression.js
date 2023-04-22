@@ -17,9 +17,10 @@ const progression = () => {
       counter += 1;
     } else {
       wrongAnswer(answer, hiddenElement, yourName);
+      return;
     }
   }
-  return console.log(`Congratulations, ${yourName}!`);
+  console.log(`Congratulations, ${yourName}!`);
 };
 
 export default progression;
