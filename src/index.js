@@ -60,7 +60,7 @@ export const trueAnswerWithGCD = (num1, num2) => {
 
 export const trueAnswerWithPrime = (a) => {
   for (let i = 2; i < a; i += 1) {
-    if (a % i === 0) return 'no';
+    if (a % i === 0 || a === 1) return 'no';
   }
   return 'yes';
 };
