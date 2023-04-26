@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/ShanyAilurus/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ShanyAilurus/frontend-project-44/actions)",
+  "description": "My first Hexlet project. It contains 5 easy math problems for practice.",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "author": "",
+  "author": "Nataliia Selianska",
+  "email": "natari.sev@gmail.com",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.21",

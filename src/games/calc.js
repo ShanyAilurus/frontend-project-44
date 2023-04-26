@@ -1,28 +1,20 @@
-import readlineSync from 'readline-sync';
-import {
-  randomOperator, generateRandomNumber, trueAnswerWithCalc, askYourName, wrongAnswer,
-} from '../index.js';
+import generateRoundofAnyGame from '../index.js';
+import { randomInTheRange, randomOperator, trueAnswerWithCalc } from '../utils.js';
 
-const brainCalc = () => {
-  const yourName = askYourName();
-  console.log('What is the result of the expression?');
-  let counter = 0;
-  while (counter < 3) {
-    const a = generateRandomNumber();
-    const b = generateRandomNumber();
-    const operator = randomOperator();
-    const trueAnswerCalc = trueAnswerWithCalc(operator, a, b);
-    console.log(`Question: ${a} ${operator} ${b}`);
-    const answer = readlineSync.question('Your answer:');
-    if (Number(answer) === Number(trueAnswerCalc)) {
-      console.log('Correct!');
-      counter += 1;
-    } else {
-      wrongAnswer(answer, trueAnswerCalc, yourName);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${yourName}!`);
+const description = 'What is the result of the expression?.';
+
+const calcGame = () => {
+  const num1 = randomInTheRange(0, 100);
+  const num2 = randomInTheRange(0, 100);
+  const operator = randomOperator();
+  const trueAnswer = trueAnswerWithCalc(operator, num1, num2);
+  const question = `${num1} ${operator} ${num2}`;
+
+  return [question, trueAnswer];
 };
 
-export default brainCalc;
+const runCalcGame = () => {
+  generateRoundofAnyGame(description, calcGame);
+};
+
+export default runCalcGame;
