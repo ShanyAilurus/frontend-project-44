@@ -1,4 +1,4 @@
-import generateRoundofAnyGame from '../index.js';
+import generateRoundOfAnyGame from '../index.js';
 import { randomInTheRange, randomOperator, trueAnswerWithCalc } from '../utils.js';
 
 const description = 'What is the result of the expression?.';
@@ -14,7 +14,7 @@ const calcGame = () => {
 };
 
 const runCalcGame = () => {
-  generateRoundofAnyGame(description, calcGame);
+  generateRoundOfAnyGame(description, calcGame);
 };
 
 export default runCalcGame;

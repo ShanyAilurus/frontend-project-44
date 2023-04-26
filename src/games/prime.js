@@ -1,4 +1,4 @@
-import generateRoundofAnyGame from '../index.js';
+import generateRoundOfAnyGame from '../index.js';
 import { randomInTheRange, trueAnswerWithPrime } from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -10,7 +10,7 @@ const primeGame = () => {
 };
 
 const runPrimeGame = () => {
-  generateRoundofAnyGame(description, primeGame);
+  generateRoundOfAnyGame(description, primeGame);
 };
 
 export default runPrimeGame;

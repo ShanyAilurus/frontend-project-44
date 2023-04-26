@@ -1,4 +1,4 @@
-import generateRoundofAnyGame from '../index.js';
+import generateRoundOfAnyGame from '../index.js';
 import { randomInTheRange, trueAnswerWithGCD } from '../utils.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -12,7 +12,7 @@ const gcdGame = () => {
 };
 
 const runGcdGame = () => {
-  generateRoundofAnyGame(description, gcdGame);
+  generateRoundOfAnyGame(description, gcdGame);
 };
 
 export default runGcdGame;
