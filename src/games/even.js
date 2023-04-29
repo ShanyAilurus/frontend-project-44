@@ -3,26 +3,29 @@ import {
   greeting, askQuestion, getAnswer, isCorrectAnswer, printCorrect, printWrong, printCongratulations,
 } from '../index.js';
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isPrime = (a) => {
-  for (let i = 2; i < a; i += 1) {
-    if (a % i === 0 || a === 1) return 'no';
+const isEven = (a) => {
+  let trueAnswer;
+  if (a % 2 === 0) {
+    trueAnswer = 'yes';
+  } else {
+    trueAnswer = 'no';
   }
-  return 'yes';
+  return trueAnswer;
 };
 
-const primeGame = () => {
-  const num = getRandomNumber(1, 100);
-  const trueAnswer = isPrime(num);
-  return [num, trueAnswer];
+const evenGame = () => {
+  const a = getRandomNumber(0, 100);
+  const trueAnswer = isEven(a);
+  return [a, trueAnswer];
 };
 
-const runPrimeGame = () => {
+const runEvenGame = () => {
   const userName = greeting(description);
   const countRound = 3;
   for (let i = 0; i < countRound; i += 1) {
-    const [question, trueAnswer] = primeGame();
+    const [question, trueAnswer] = evenGame();
     askQuestion(question);
     const answer = getAnswer();
     if (isCorrectAnswer(trueAnswer, answer)) {
@@ -35,4 +38,4 @@ const runPrimeGame = () => {
   printCongratulations(userName);
 };
 
-export default runPrimeGame;
+export default runEvenGame;

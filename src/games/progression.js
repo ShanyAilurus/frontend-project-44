@@ -1,5 +1,7 @@
-import generateRoundOfAnyGame from '../index.js';
 import { generateProgression } from '../utils.js';
+import {
+  greeting, askQuestion, getAnswer, isCorrectAnswer, printCorrect, printWrong, printCongratulations,
+} from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -8,12 +10,25 @@ const progressionGame = () => {
   const rand = Math.floor(Math.random() * newArr.length);
   const hiddenElement = newArr.splice(rand - 1, 1, '..');
   const newString = newArr.join(' ');
-  const trueAnswer = hiddenElement;
+  const trueAnswer = hiddenElement.toString();
   return [newString, trueAnswer];
 };
 
 const runProgressionGame = () => {
-  generateRoundOfAnyGame(description, progressionGame);
+  const userName = greeting(description);
+  const countRound = 3;
+  for (let i = 0; i < countRound; i += 1) {
+    const [question, trueAnswer] = progressionGame();
+    askQuestion(question);
+    const answer = getAnswer();
+    if (isCorrectAnswer(trueAnswer, answer)) {
+      printCorrect();
+    } else {
+      printWrong(trueAnswer, answer, userName);
+      return;
+    }
+  }
+  printCongratulations(userName);
 };
 
 export default runProgressionGame;
