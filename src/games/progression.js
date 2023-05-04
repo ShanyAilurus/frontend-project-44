@@ -1,4 +1,4 @@
-import generateRoundofAnyGame from '../index.js';
+import generateGameRounds from '../index.js';
 import { generateProgression } from '../utils.js';
 
 const description = 'What number is missing in the progression?';
@@ -13,7 +13,7 @@ const progressionGame = () => {
 };
 
 const runProgressionGame = () => {
-  generateRoundofAnyGame(description, progressionGame);
+  generateGameRounds(description, progressionGame);
 };
 
 export default runProgressionGame;
