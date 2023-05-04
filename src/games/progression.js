@@ -8,7 +8,7 @@ const progressionGame = () => {
   const rand = Math.floor(Math.random() * newArr.length);
   const hiddenElement = newArr.splice(rand - 1, 1, '..');
   const newString = newArr.join(' ');
-  const trueAnswer = hiddenElement;
+  const trueAnswer = hiddenElement.toString();
   return [newString, trueAnswer];
 };
 
