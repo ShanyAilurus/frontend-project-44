@@ -3,7 +3,7 @@ import { getRandomNumber, randomOperator } from '../utils.js';
 
 const description = 'What is the result of the expression?.';
 
-export const calculate = (operator, a, b) => {
+const calculate = (operator, a, b) => {
   let result;
   switch (operator) {
     case '+':

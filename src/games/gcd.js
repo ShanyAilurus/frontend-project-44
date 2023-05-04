@@ -3,7 +3,7 @@ import { getRandomNumber } from '../utils.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-export const getGCD = (num1, num2) => {
+const getGCD = (num1, num2) => {
   let a = num1;
   let b = num2;
   while (a !== 0 && b !== 0) {
