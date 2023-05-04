@@ -1,7 +1,5 @@
+import generateGameRounds from '../index.js';
 import { getRandomNumber } from '../utils.js';
-import {
-  greeting, askQuestion, getAnswer, isCorrectAnswer, printCorrect, printWrong, printCongratulations,
-} from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -19,20 +17,7 @@ const primeGame = () => {
 };
 
 const runPrimeGame = () => {
-  const userName = greeting(description);
-  const countRound = 3;
-  for (let i = 0; i < countRound; i += 1) {
-    const [question, trueAnswer] = primeGame();
-    askQuestion(question);
-    const answer = getAnswer();
-    if (isCorrectAnswer(trueAnswer, answer)) {
-      printCorrect();
-    } else {
-      printWrong(trueAnswer, answer, userName);
-      return;
-    }
-  }
-  printCongratulations(userName);
+  generateGameRounds(description, primeGame);
 };
 
 export default runPrimeGame;

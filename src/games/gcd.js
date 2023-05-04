@@ -1,11 +1,9 @@
+import generateGameRounds from '../index.js';
 import { getRandomNumber } from '../utils.js';
-import {
-  greeting, askQuestion, getAnswer, isCorrectAnswer, printCorrect, printWrong, printCongratulations,
-} from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getGCD = (num1, num2) => {
+export const getGCD = (num1, num2) => {
   let a = num1;
   let b = num2;
   while (a !== 0 && b !== 0) {
@@ -28,20 +26,7 @@ const gcdGame = () => {
 };
 
 const runGcdGame = () => {
-  const userName = greeting(description);
-  const countRound = 3;
-  for (let i = 0; i < countRound; i += 1) {
-    const [question, trueAnswer] = gcdGame();
-    askQuestion(question);
-    const answer = getAnswer();
-    if (isCorrectAnswer(trueAnswer, answer)) {
-      printCorrect();
-    } else {
-      printWrong(trueAnswer, answer, userName);
-      return;
-    }
-  }
-  printCongratulations(userName);
+  generateGameRounds(description, gcdGame);
 };
 
 export default runGcdGame;

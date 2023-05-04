@@ -1,7 +1,5 @@
+import generateGameRounds from '../index.js';
 import { getRandomNumber } from '../utils.js';
-import {
-  greeting, askQuestion, getAnswer, isCorrectAnswer, printCorrect, printWrong, printCongratulations,
-} from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -22,20 +20,7 @@ const evenGame = () => {
 };
 
 const runEvenGame = () => {
-  const userName = greeting(description);
-  const countRound = 3;
-  for (let i = 0; i < countRound; i += 1) {
-    const [question, trueAnswer] = evenGame();
-    askQuestion(question);
-    const answer = getAnswer();
-    if (isCorrectAnswer(trueAnswer, answer)) {
-      printCorrect();
-    } else {
-      printWrong(trueAnswer, answer, userName);
-      return;
-    }
-  }
-  printCongratulations(userName);
+  generateGameRounds(description, evenGame);
 };
 
 export default runEvenGame;
