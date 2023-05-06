@@ -1,5 +1,5 @@
 import generateGameRounds from '../index.js';
-import { getRandomNumber, randomOperator } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'What is the result of the expression?.';
 
@@ -12,9 +12,11 @@ const calculate = (operator, a, b) => {
     case '-':
       result = a - b;
       break;
-    default:
+    case '*':
       result = a * b;
       break;
+    default:
+      throw new Error('Operator not selected');
   }
   return result.toString();
 };
@@ -22,7 +24,8 @@ const calculate = (operator, a, b) => {
 const calcGame = () => {
   const num1 = getRandomNumber(0, 100);
   const num2 = getRandomNumber(0, 100);
-  const operator = randomOperator();
+  const operators = ['+', '-', '*'];
+  const operator = operators[getRandomNumber(0, 2)];
   const trueAnswer = calculate(operator, num1, num2);
   const question = `${num1} ${operator} ${num2}`;
 

@@ -1,24 +1,20 @@
 import generateGameRounds from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (a) => {
-  if (a > 1) {
-    for (let i = 2; i < a; i += 1) {
-      if (a % i === 0) {
-        return 'no';
-      }
-    }
-    return 'yes';
+  if (a === 1) return false;
+  for (let i = 2; i < a; i += 1) {
+    if (a % i === 0) return false;
   }
-  return 'no';
+  return true;
 };
 
 const primeGame = () => {
-  const num = getRandomNumber(1, 100);
-  const trueAnswer = isPrime(num);
-  return [num, trueAnswer];
+  const a = getRandomNumber(1, 100);
+  const trueAnswer = isPrime(a) ? 'yes' : 'no';
+  return [a, trueAnswer];
 };
 
 const runPrimeGame = () => {
