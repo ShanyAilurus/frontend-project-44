@@ -5,24 +5,24 @@ const description = 'What number is missing in the progression?';
 
 const generateProgression = () => {
   const firstElement = getRandomNumber(1, 100);
-  const array = [firstElement];
+  const progression = [firstElement];
   const number = getRandomNumber(5, 10);
   const progressionStep = getRandomNumber(1, 10);
   for (let i = 0; i < number - 1; i += 1) {
-    let num1 = array[i];
+    let num1 = progression[i];
     num1 += progressionStep;
-    array.push(num1);
+    progression.push(num1);
   }
-  return array;
+  return progression;
 };
 
 const progressionGame = () => {
-  const newArr = generateProgression();
-  const rand = Math.floor(Math.random() * newArr.length);
-  const hiddenElement = newArr.splice(rand - 1, 1, '..');
-  const newString = newArr.join(' ');
+  const resultProgression = generateProgression();
+  const rand = Math.floor(Math.random() * resultProgression.length);
+  const hiddenElement = resultProgression.splice(rand - 1, 1, '..');
+  const finishProgression = resultProgression.join(' ');
   const trueAnswer = hiddenElement.toString();
-  return [newString, trueAnswer];
+  return [finishProgression, trueAnswer];
 };
 
 const runProgressionGame = () => {
